@@ -2,6 +2,7 @@
   "site_label": "Example Affiliate Site",
   "root_host": "example-affiliate-site.test",
   "expected_amazon_domain": "amazon.es",
+  "output_slug": "example_affiliate_site",
   "hub_urls": [
     "https://example-affiliate-site.test/ofertas-en-smartphone",
     "https://example-affiliate-site.test/ofertas-de-drones",
@@ -9,5 +10,8 @@
   ],
   "max_destinations_per_hub": 12,
   "max_total_destinations": 36,
+  "phase07_prefix": "affiliate_phase0_7_example_affiliate_site_",
+  "phase08_prefix": "affiliate_phase0_8_example_affiliate_site_",
+  "phase09_prefix": "affiliate_phase0_9_example_affiliate_site_",
   "notes": "Public-safe demo config. Replace with authorized target URLs before running an audit."
 }

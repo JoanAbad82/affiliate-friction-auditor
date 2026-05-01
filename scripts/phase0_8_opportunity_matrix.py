@@ -8,10 +8,13 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-SITE_LABEL = "Nolodejesescapar"
-ROOT_HOST = "nolodejesescapar.com"
-PHASE07_PREFIX = "affiliate_phase0_7_nolodejesescapar_"
-PHASE08_PREFIX = "affiliate_phase0_8_nolodejesescapar_"
+from _site_config import load_site_config_from_cli_or_env, pop_cli_option
+
+SITE_LABEL = "Example Affiliate Site"
+ROOT_HOST = "example-affiliate-site.test"
+OUTPUT_SLUG = "example_affiliate_site"
+PHASE07_PREFIX = "affiliate_phase0_7_example_affiliate_site_"
+PHASE08_PREFIX = "affiliate_phase0_8_example_affiliate_site_"
 
 REQUIRED_FILES = [
     "summary.txt",
@@ -136,7 +139,38 @@ def has_required_files(folder: Path) -> bool:
     return folder.is_dir() and all((folder / name).exists() for name in REQUIRED_FILES)
 
 
-def find_latest_phase07_input() -> Path:
+def resolve_phase07_input(arg: str) -> Path:
+    input_path = Path(arg).expanduser()
+
+    if input_path.is_dir() and has_required_files(input_path):
+        return input_path
+
+    if input_path.is_file() and input_path.suffix.lower() == ".zip":
+        extract_root = Path.cwd() / f"phase0_8_input_extracted_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        extract_root.mkdir(parents=True, exist_ok=True)
+
+        with zipfile.ZipFile(input_path, "r") as z:
+            z.extractall(extract_root)
+
+        extracted_candidates = [p for p in extract_root.rglob(PHASE07_PREFIX + "*") if has_required_files(p)]
+
+        if extracted_candidates:
+            return extracted_candidates[0]
+
+        if has_required_files(extract_root):
+            return extract_root
+
+    print(f"ERROR: el input indicado no contiene los archivos 0.7 requeridos: {input_path}", file=sys.stderr)
+    sys.exit(2)
+
+
+def find_latest_phase07_input(input_arg: str | None = None) -> Path:
+    if input_arg:
+        return resolve_phase07_input(input_arg)
+
+    if len(sys.argv) >= 2:
+        return resolve_phase07_input(sys.argv[1])
+
     search_roots = [
         Path.cwd(),
         Path.home() / "affiliate_phase0",
@@ -186,7 +220,7 @@ def find_latest_phase07_input() -> Path:
             return extract_root
 
     print("ERROR: no encuentro carpeta ni ZIP de fase 0.7 con los CSV esperados.", file=sys.stderr)
-    print("Coloca la carpeta o ZIP affiliate_phase0_7_nolodejesescapar_* en Desktop, Downloads o $HOME/affiliate_phase0.", file=sys.stderr)
+    print(f"Coloca la carpeta o ZIP {PHASE07_PREFIX}* en Desktop, Downloads o $HOME/affiliate_phase0.", file=sys.stderr)
     sys.exit(2)
 
 
@@ -464,7 +498,9 @@ def dedupe_priority_rows(matrix_rows: list[dict]) -> list[dict]:
 
 
 def main():
-    input_dir = find_latest_phase07_input()
+    load_site_config_from_cli_or_env(globals())
+    input_arg = pop_cli_option(sys.argv, "--input")
+    input_dir = find_latest_phase07_input(input_arg)
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_dir = desktop_dir() / f"{PHASE08_PREFIX}{stamp}"

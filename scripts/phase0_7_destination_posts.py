@@ -8,6 +8,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+from _site_config import load_site_config_from_cli_or_env
 from playwright.async_api import async_playwright
 
 # ============================================================
@@ -22,14 +23,15 @@ from playwright.async_api import async_playwright
 # - Añade señales de CommercialReason.
 # ============================================================
 
-SITE_LABEL = "Nolodejesescapar"
-ROOT_HOST = "nolodejesescapar.com"
+SITE_LABEL = "Example Affiliate Site"
+ROOT_HOST = "example-affiliate-site.test"
 EXPECTED_AMAZON_DOMAIN = "amazon.es"
+OUTPUT_SLUG = "example_affiliate_site"
 
 HUB_URLS = [
-    "https://nolodejesescapar.com/ofertas-en-smartphone",
-    "https://nolodejesescapar.com/ofertas-de-drones",
-    "https://nolodejesescapar.com/pc-accesorios",
+    "https://example-affiliate-site.test/ofertas-en-smartphone",
+    "https://example-affiliate-site.test/ofertas-de-drones",
+    "https://example-affiliate-site.test/pc-accesorios",
 ]
 
 MAX_DESTINATIONS_PER_HUB = 12
@@ -119,6 +121,8 @@ INTERNAL_CLOAK_PATH_RE = re.compile(
     re.I,
 )
 
+load_site_config_from_cli_or_env(globals())
+
 HUB_PATHS = {urllib.parse.urlparse(u).path.rstrip("/").lower() for u in HUB_URLS}
 
 
@@ -131,7 +135,7 @@ def desktop_dir() -> Path:
 
 
 stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-out_dir = desktop_dir() / f"affiliate_phase0_7_nolodejesescapar_{stamp}"
+out_dir = desktop_dir() / f"affiliate_phase0_7_{OUTPUT_SLUG}_{stamp}"
 out_dir.mkdir(parents=True, exist_ok=True)
 
 summary_txt = out_dir / "summary.txt"
