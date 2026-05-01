@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Generated outputs
+outputs/*
+!outputs/.gitkeep
+affiliate_phase0_*/
+affiliate_phase0_*.zip
+phase0_*_input_extracted_*/
+phase0_*_debug_*.log
+
+# Runtime/browser artifacts
+*.log
+*.tmp
+*.bak
+*.zip
+destination_screenshots/
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
