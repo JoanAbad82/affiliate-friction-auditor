@@ -7,9 +7,12 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
-SITE_LABEL = "Nolodejesescapar"
-PHASE08_PREFIX = "affiliate_phase0_8_nolodejesescapar_"
-PHASE09_PREFIX = "affiliate_phase0_9_nolodejesescapar_"
+from _site_config import load_site_config_from_cli_or_env, pop_cli_option
+
+SITE_LABEL = "Example Affiliate Site"
+OUTPUT_SLUG = "example_affiliate_site"
+PHASE08_PREFIX = "affiliate_phase0_8_example_affiliate_site_"
+PHASE09_PREFIX = "affiliate_phase0_9_example_affiliate_site_"
 
 REQUIRED_08_FILES = [
     "summary.txt",
@@ -110,9 +113,9 @@ def extract_zip_to_temp(zip_path: Path) -> Path | None:
     return None
 
 
-def find_latest_phase08_input() -> Path:
-    if len(sys.argv) >= 2:
-        arg = Path(sys.argv[1]).expanduser()
+def find_latest_phase08_input(input_arg: str | None = None) -> Path:
+    if input_arg or len(sys.argv) >= 2:
+        arg = Path(input_arg or sys.argv[1]).expanduser()
         if arg.is_dir():
             found = find_required_folder_inside(arg)
             if found:
@@ -161,9 +164,9 @@ def find_latest_phase08_input() -> Path:
             return found
 
     print("ERROR: no encuentro carpeta ni ZIP de fase 0.8 con los archivos esperados.", file=sys.stderr)
-    print("Coloca affiliate_phase0_8_nolodejesescapar_* en Desktop, Downloads o $HOME/affiliate_phase0.", file=sys.stderr)
+    print(f"Coloca {PHASE08_PREFIX}* en Desktop, Downloads o $HOME/affiliate_phase0.", file=sys.stderr)
     print("También puedes ejecutar:", file=sys.stderr)
-    print("python3 phase0_9_nolodejesescapar_product_offer.py /ruta/al/phase0_8_outputs.zip", file=sys.stderr)
+    print("python3 scripts/phase0_9_product_offer.py --input /ruta/al/phase0_8_outputs.zip", file=sys.stderr)
     sys.exit(2)
 
 
@@ -589,7 +592,9 @@ def build_discovery_questions() -> str:
 
 
 def main():
-    input_dir = find_latest_phase08_input()
+    load_site_config_from_cli_or_env(globals())
+    input_arg = pop_cli_option(sys.argv, "--input")
+    input_dir = find_latest_phase08_input(input_arg)
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_dir = desktop_dir() / f"{PHASE09_PREFIX}{stamp}"
