@@ -1,0 +1,60 @@
+FASE 0.9 — CONVERSION DE MATRIZ EN PROPUESTA PRODUCTO/SERVICIO
+Web base: Example Affiliate Site
+Oferta propuesta: Affiliate Hub CTA Optimization Sprint
+Input 0.8 usado: /home/johan/Escritorio/affiliate_phase0_8_example-affiliate-site_20260501_172404
+Fecha: 2026-05-01 17:31:11
+
+RESUMEN COMERCIAL
+- Hubs analizados: 3
+- Filas hub -> destino: 36
+- Deal posts elegibles: 27
+- Deal posts unicos: 19
+- Deal posts HIGH: 19
+- Oportunidades de friccion hub/listado: 26
+- Gaps reales probables en destino: 1
+- Hub mas claro por score medio: https://example-affiliate-site.test/pc-accesorios
+
+TIPOS DE OPORTUNIDAD
+- DESTINATION_AFFILIATE_GAP: 1
+- HUB_CTA_FRICTION: 26
+
+ESTADOS DE MONETIZACION
+- GAP_PROBABLE: 1
+- MONETIZED_EXTERNAL: 26
+
+RETAILERS PRINCIPALES
+- AliExpress: 9
+- Amazon: 9
+- Awin/Redirect: 6
+- TradeTracker/Redirect: 6
+- MediaMarkt: 3
+- TradeDoubler/Redirect: 3
+
+TOP 10 OPORTUNIDADES VENDIBLES
+- score=100 | DESTINATION_AFFILIATE_GAP | CTA='Añadir CTA afiliado si existe oferta real' | https://example-affiliate-site.test/akko-5098b-mechanical-keyboard
+- score=94 | HUB_CTA_FRICTION | CTA='Ver oferta en Amazon' | https://example-affiliate-site.test/auriculares-cmf-buds-2a
+- score=93 | HUB_CTA_FRICTION | CTA='Ver oferta en Amazon' | https://example-affiliate-site.test/baliza-emergencia-v16
+- score=93 | HUB_CTA_FRICTION | CTA='Ver oferta en Amazon' | https://example-affiliate-site.test/dji-neo
+- score=91 | HUB_CTA_FRICTION | CTA='Ver oferta en MediaMarkt' | https://example-affiliate-site.test/app-mediamarkt
+- score=91 | HUB_CTA_FRICTION | CTA='Ver oferta en AliExpress' | https://example-affiliate-site.test/cmf-by-nothing-watch-pro-2
+- score=91 | HUB_CTA_FRICTION | CTA='Ver oferta en AliExpress' | https://example-affiliate-site.test/dji-neo-2
+- score=91 | HUB_CTA_FRICTION | CTA='Ver oferta en AliExpress' | https://example-affiliate-site.test/dron-plegable-con-doble-camara
+- score=91 | HUB_CTA_FRICTION | CTA='Ver oferta en AliExpress' | https://example-affiliate-site.test/drone-q12-4k
+- score=91 | HUB_CTA_FRICTION | CTA='Ver oferta en AliExpress' | https://example-affiliate-site.test/ventilador-de-techo-con-lampara-control-remoto
+
+ARCHIVOS GENERADOS
+- summary.txt
+- product_service_proposal.md
+- offer_onepager.txt
+- implementation_backlog.csv
+- roi_scenarios.csv
+- sales_assets.md
+- outreach_email_es.txt
+- outreach_linkedin_es.txt
+- client_discovery_questions.txt
+- validation_notes.txt
+
+DICTAMEN
+La propuesta vendible no debe posicionarse como SEO general ni auditoria generica.
+Debe posicionarse como optimizacion de friccion afiliada en hubs/listados ya existentes.
+El claim prudente: detectar, priorizar e implementar CTAs medibles donde ya hay evidencia de monetizacion o intencion comercial.

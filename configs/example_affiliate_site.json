@@ -1,0 +1,13 @@
+{
+  "site_label": "Example Affiliate Site",
+  "root_host": "example-affiliate-site.test",
+  "expected_amazon_domain": "amazon.es",
+  "hub_urls": [
+    "https://example-affiliate-site.test/ofertas-en-smartphone",
+    "https://example-affiliate-site.test/ofertas-de-drones",
+    "https://example-affiliate-site.test/pc-accesorios"
+  ],
+  "max_destinations_per_hub": 12,
+  "max_total_destinations": 36,
+  "notes": "Public-safe demo config. Replace with authorized target URLs before running an audit."
+}
