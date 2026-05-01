@@ -143,3 +143,15 @@ If there is little interest:
 - The service should not imply guaranteed outcomes.
 - Private client URLs, screenshots, and outputs must remain private unless explicitly approved.
 - Public materials must not link to the private repository or imply the tool is downloadable.
+
+## Phase 1.6 - Initial Prospect Validation
+
+Phase 1.6 adds a controlled first outreach batch.
+
+- 10 prospect accounts were selected in `sales/prospects_initial_10.md`.
+- The first batch should include only 5 smaller/mid-sized sites: Ofertaman, SuperChollos, Ofertium, Qué Gangas, and Chollo.es.
+- The remaining 5 prospects stay on hold for a second batch.
+- Outreach should be manual, Spanish-first, and logged in `sales/prospect_tracker_initial_10.csv`.
+- The goal is to validate interest in a private audit, not to promote public software access.
+- No mass sending automation should be used.
+- Follow-ups should wait 4-5 business days and stop immediately if a prospect declines.
