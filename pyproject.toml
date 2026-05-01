@@ -1,0 +1,20 @@
+[project]
+name = "affiliate-friction-auditor"
+version = "0.1.0"
+description = "Early-stage audit toolkit for detecting affiliate CTA friction in commercial hubs and listing pages."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+authors = [
+  { name = "Joan Abad" }
+]
+dependencies = [
+  "playwright>=1.40,<2"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"

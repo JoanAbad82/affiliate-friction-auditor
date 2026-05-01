@@ -1,1 +1,1 @@
-Demo examples will be added after the repository structure is validated.
+Demo examples will be added from sanitized outputs in a later repository-hardening step.
