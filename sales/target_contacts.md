@@ -1,0 +1,14 @@
+# Target Contacts
+
+| Contact type | Why they might care | Where to find them | Best angle | Priority |
+|---|---|---|---|---|
+| Affiliate publishers | They depend on commercial clicks and may have hubs that hide useful CTAs behind destination posts. | Affiliate communities, LinkedIn, niche publisher directories, site footer contact pages. | Find missed CTA opportunities without doing a generic SEO audit. | High |
+| Niche site owners | They often manage content and monetization directly and can act quickly on small backlog items. | Niche blogs, About pages, X/LinkedIn profiles, newsletter footers. | Review 2-3 high-intent pages and return specific implementation actions. | High |
+| SEO agencies managing affiliate sites | They may need a focused add-on audit for commerce-content clients. | Agency websites, LinkedIn, SEO Slack groups, conference speaker lists. | A narrow affiliate friction audit they can resell or use internally. | High |
+| Coupon/deal sites | Listings and hubs are central to their user journey and CTA quality matters. | Deal-site directories, Google searches for coupon/deal verticals, industry newsletters. | Identify cards where the user path to the merchant is less direct than it should be. | High |
+| Comparison/review sites | They often combine informational pages, commercial tables, and destination articles. | SERP research, review-site directories, LinkedIn company pages. | Prioritize pages where commercial intent is already visible but the CTA path is unclear. | High |
+| Media sites with commerce content | Commerce teams need evidence-backed recommendations that respect editorial constraints. | Publisher commerce pages, LinkedIn commerce editors, media kits. | Manual review plus a backlog that editorial and product teams can evaluate. | Medium |
+| Newsletter operators with deal pages | They may have landing pages or archives that send users through extra steps before offers. | Newsletter directories, Substack/Beehiiv pages, creator profiles. | Improve clarity of commercial paths on existing deal/listing pages. | Medium |
+| Amazon Associates site owners | They may have monetized destination posts but inconsistent hub/listing CTAs. | Niche forums, affiliate communities, site footer disclosures. | Detect Amazon-link gaps and friction without promising revenue changes. | Medium |
+| Content portfolio operators | They own multiple sites and can test a repeatable audit across properties. | LinkedIn, acquisition marketplaces, operator newsletters, portfolio websites. | Start with one property and decide whether the audit scales. | Medium |
+| Small ecommerce-affiliate hybrid blogs | They may mix owned products, affiliate offers, and review content. | Shopify/WooCommerce blogs, niche ecommerce content sections, founder profiles. | Clarify when a hub should send users to content, a merchant, or an owned offer. | Low |

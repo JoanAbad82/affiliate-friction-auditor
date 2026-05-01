@@ -42,6 +42,10 @@ The toolkit identifies where a hub could expose a clearer commercial CTA earlier
 
 This is not generic SEO. It is affiliate friction optimization for commercial hubs and listing pages.
 
+## Commercial validation
+
+Phase 1.5 commercial validation materials live in `docs/commercial_validation.md` and `sales/`.
+
 ## License
 
 Private / proprietary at this stage. See LICENSE.
