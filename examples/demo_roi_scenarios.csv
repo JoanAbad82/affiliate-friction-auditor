@@ -1,0 +1,5 @@
+Scenario,MonthlyHubSessions,CtaExposureRate,IncrementalCommercialCtr,MerchantConversionRate,AverageOrderValueEUR,CommissionRate,EstimatedExposedSessions,EstimatedIncrementalCommercialClicks,EstimatedIncrementalOrders,EstimatedMonthlyAffiliateRevenueEUR,EstimatedAnnualAffiliateRevenueEUR,Note
+Conservative,25000,0.55,0.006,0.018,65,0.03,13750.0,82.5,1.49,2.9,34.75,"Modelo orientativo. Sustituir por datos reales de Analytics, CTR afiliado y comisiones del cliente."
+Base,75000,0.65,0.012,0.025,85,0.04,48750.0,585.0,14.62,49.73,596.7,"Modelo orientativo. Sustituir por datos reales de Analytics, CTR afiliado y comisiones del cliente."
+Optimistic,200000,0.75,0.025,0.035,110,0.055,150000.0,3750.0,131.25,794.06,9528.75,"Modelo orientativo. Sustituir por datos reales de Analytics, CTR afiliado y comisiones del cliente."
+High traffic publisher,500000,0.7,0.018,0.028,95,0.045,350000.0,6300.0,176.4,754.11,9049.32,"Modelo orientativo. Sustituir por datos reales de Analytics, CTR afiliado y comisiones del cliente."
