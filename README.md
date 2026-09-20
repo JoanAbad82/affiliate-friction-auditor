@@ -6,7 +6,7 @@ Affiliate Friction Auditor helps identify commercial hub/listing pages where use
 
 ## Current status
 
-Prototype / private audit toolkit.
+Prototype / public audit toolkit.
 
 This repository contains the first validated workflow:
 
@@ -48,4 +48,4 @@ Phase 1.5 commercial validation materials live in `docs/commercial_validation.md
 
 ## License
 
-Private / proprietary at this stage. See LICENSE.
+See LICENSE.
