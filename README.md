@@ -83,9 +83,15 @@ This is not generic SEO. It is a focused affiliate-friction audit workflow for c
 
 The repository is public software under the **Apache License 2.0**. Public source access does not imply access to private client data, private configurations, or unpublished commercial work.
 
-## Roadmap
+## Tests and roadmap
 
-The next engineering step is to move reusable classification/scoring logic from the phase scripts into `src/affiliate_friction_auditor/` and add focused unit tests.
+The first reusable URL utilities now live in `src/affiliate_friction_auditor/url_utils.py` with focused unit tests. The next engineering slices will extract retailer/redirect classification, internal-cloak classification, destination-kind logic, and opportunity scoring.
+
+Run the current tests with:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v
+```
 
 See [docs/roadmap.md](docs/roadmap.md).
 

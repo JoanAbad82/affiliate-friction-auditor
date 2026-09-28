@@ -21,6 +21,8 @@ PYTHON_TARGETS = [
     ROOT / "scripts" / "phase0_8_opportunity_matrix.py",
     ROOT / "scripts" / "phase0_9_product_offer.py",
     ROOT / "src" / "affiliate_friction_auditor" / "__init__.py",
+    ROOT / "src" / "affiliate_friction_auditor" / "url_utils.py",
+    ROOT / "tests" / "test_url_utils.py",
 ]
 
 
