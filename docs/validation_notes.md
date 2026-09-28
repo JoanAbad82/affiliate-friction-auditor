@@ -1,13 +1,13 @@
 # Validation notes
 
-The prototype has been validated on one real affiliate-style website.
+The workflow has been exercised against a real affiliate-style website during development, but private target details and raw outputs are intentionally not published.
 
-Key result:
+Observed development result:
 
-- Most destination posts already monetized.
-- The strongest opportunity was CTA friction in hubs/listings.
-- One probable destination-level affiliate gap was detected.
+- many destination posts were already monetized;
+- the strongest opportunity appeared at the hub/listing CTA layer;
+- at least one probable destination-level affiliate gap was identified.
 
-Commercial interpretation:
+These observations are development evidence, not a guarantee that the same pattern applies to other sites.
 
-The product is currently sellable as a service/productized audit, not yet as a self-serve SaaS.
+Automated findings require manual review, and ROI outputs are scenarios rather than predictions.

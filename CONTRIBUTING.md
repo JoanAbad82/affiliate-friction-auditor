@@ -1,24 +1,31 @@
 # Contributing
 
-This repository is currently private and proprietary.
+Affiliate Friction Auditor is public software licensed under Apache-2.0.
 
 ## Development principles
 
-- Keep real audit outputs out of Git.
+- Keep real audit outputs and private target-site data out of Git.
 - Prefer small, reviewable changes.
 - Keep site-specific settings in config files, not hardcoded into reusable logic.
-- Add tests before broad refactors.
-- Do not claim revenue uplift without measurement.
+- Add or update tests when extracting reusable behavior.
+- Do not claim revenue uplift or compliance outcomes without evidence.
+- Preserve conservative handling of uncertain affiliate signals.
 
 ## Before committing
 
-Run:
+Run the cross-platform repository verifier:
 
 ```bash
-./scripts/verify_repo_safe.sh
+python scripts/verify_repo_safe.py
 ```
 
-The verifier checks for forbidden tracked files, example sanitization and Python syntax.
+The verifier checks:
+
+- forbidden tracked files;
+- example sanitization;
+- Python syntax for the current source/scripts.
+
+GitHub Actions runs the same validation on pushes and pull requests.
 
 ## Branch naming
 
@@ -33,3 +40,7 @@ Recommended prefixes:
 ## Output policy
 
 Generated outputs belong in `outputs/` or outside the repository and must remain untracked.
+
+## Scope
+
+Large behavior changes should be separated from public-presentation, licensing, or repository-hardening changes whenever practical.
