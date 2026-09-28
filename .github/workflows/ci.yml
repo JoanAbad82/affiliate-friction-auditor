@@ -34,3 +34,6 @@ jobs:
 
       - name: Validate repository safety and syntax
         run: python scripts/verify_repo_safe.py
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v

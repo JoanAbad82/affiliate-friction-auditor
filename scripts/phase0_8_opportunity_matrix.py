@@ -3,11 +3,20 @@ import csv
 import re
 import sys
 import zipfile
-import urllib.parse
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parents[1] / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from affiliate_friction_auditor.url_utils import (
+    canonical_url as shared_canonical_url,
+    host_of as shared_host_of,
+    path_of as shared_path_of,
+    slug_of as shared_slug_of,
+)
 from _site_config import load_site_config_from_cli_or_env, pop_cli_option
 
 SITE_LABEL = "Example Affiliate Site"
@@ -72,35 +81,19 @@ def intish(value, default=0) -> int:
 
 
 def canonical_url(url: str) -> str:
-    if not url:
-        return ""
-    try:
-        parsed = urllib.parse.urlparse(str(url).strip())
-        parsed = parsed._replace(fragment="")
-        return urllib.parse.urlunparse(parsed).rstrip("/")
-    except Exception:
-        return str(url).strip().rstrip("/")
+    return shared_canonical_url(url)
 
 
 def host_of(url: str) -> str:
-    try:
-        return (urllib.parse.urlparse(str(url).strip()).hostname or "").lower()
-    except Exception:
-        return ""
+    return shared_host_of(url)
 
 
 def path_of(url: str) -> str:
-    try:
-        return urllib.parse.urlparse(str(url).strip()).path.rstrip("/").lower() or "/"
-    except Exception:
-        return ""
+    return shared_path_of(url)
 
 
 def slug_of(url: str) -> str:
-    path = path_of(url).strip("/")
-    if "/" in path:
-        return path.split("/")[-1]
-    return path
+    return shared_slug_of(url)
 
 
 def is_internal(url: str) -> bool:

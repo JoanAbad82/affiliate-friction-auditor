@@ -10,11 +10,20 @@
 - GitHub Actions safety/syntax CI.
 - Apache-2.0 public software license.
 
-## Next — reusable package structure
+## Reusable package structure — in progress
 
-- Move reusable URL/classification/scoring logic from scripts into `src/affiliate_friction_auditor/`.
-- Add focused unit tests before broader refactors.
-- Keep phase scripts as thin orchestration entry points where practical.
+Completed first slice:
+
+- extracted pure URL helpers into `src/affiliate_friction_auditor/url_utils.py`;
+- retained compatibility wrappers in the phase scripts;
+- added focused cross-platform unit tests.
+
+Next slices:
+
+- extract retailer/redirect classification;
+- extract internal-cloak classification;
+- extract destination-kind and opportunity-scoring logic;
+- keep phase scripts as thin orchestration entry points where practical.
 
 ## Later — product surface
 

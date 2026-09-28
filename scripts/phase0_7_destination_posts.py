@@ -1,13 +1,24 @@
 #!/usr/bin/env python3
 import asyncio
 import csv
-import html
 import re
+import sys
 import urllib.parse
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parents[1] / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from affiliate_friction_auditor.url_utils import (
+    deep_decode as shared_deep_decode,
+    host_of as shared_host_of,
+    normalize_url as shared_normalize_url,
+    path_of as shared_path_of,
+    query_keys as shared_query_keys,
+)
 from _site_config import load_site_config_from_cli_or_env
 from playwright.async_api import async_playwright
 
@@ -149,42 +160,11 @@ screens_dir.mkdir(exist_ok=True)
 
 
 def deep_decode(value: str) -> str:
-    if not value:
-        return ""
-    decoded = str(value)
-    for _ in range(4):
-        decoded_html = html.unescape(decoded)
-        decoded_url = urllib.parse.unquote(decoded_html)
-        if decoded_url == decoded:
-            break
-        decoded = decoded_url
-    return decoded.strip()
+    return shared_deep_decode(value)
 
 
 def normalize_url(base_url: str, value: str) -> str:
-    if not value:
-        return ""
-
-    value = deep_decode(value).strip()
-    low = value.lower()
-
-    if low.startswith(("mailto:", "tel:", "javascript:", "data:", "blob:", "#")):
-        return ""
-
-    if value.startswith("//"):
-        value = "https:" + value
-
-    try:
-        url = urllib.parse.urljoin(base_url, value)
-        parsed = urllib.parse.urlparse(url)
-
-        if parsed.scheme not in {"http", "https"}:
-            return ""
-
-        parsed = parsed._replace(fragment="")
-        return urllib.parse.urlunparse(parsed).rstrip("/")
-    except Exception:
-        return ""
+    return shared_normalize_url(base_url, value)
 
 
 def extract_url_candidates(base_url: str, raw: str) -> list[str]:
@@ -220,25 +200,15 @@ def extract_url_candidates(base_url: str, raw: str) -> list[str]:
 
 
 def get_hostname(url: str) -> str:
-    try:
-        return (urllib.parse.urlparse(deep_decode(url)).hostname or "").lower()
-    except Exception:
-        return ""
+    return shared_host_of(url, decode=True)
 
 
 def get_path(url: str) -> str:
-    try:
-        return urllib.parse.urlparse(deep_decode(url)).path.rstrip("/").lower() or "/"
-    except Exception:
-        return ""
+    return shared_path_of(url, decode=True)
 
 
 def query_keys(url: str) -> set[str]:
-    try:
-        parsed = urllib.parse.urlparse(deep_decode(url))
-        return {k.lower() for k in urllib.parse.parse_qs(parsed.query).keys()}
-    except Exception:
-        return set()
+    return shared_query_keys(url, decode=True)
 
 
 def is_internal_url(url: str) -> bool:
