@@ -1,10 +1,10 @@
 [project]
 name = "affiliate-friction-auditor"
 version = "0.1.0"
-description = "Early-stage audit toolkit for detecting affiliate CTA friction in commercial hubs and listing pages."
+description = "Public audit toolkit for detecting affiliate CTA friction in commercial hubs and listing pages."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Proprietary" }
+license = "Apache-2.0"
 authors = [
   { name = "Joan Abad" }
 ]

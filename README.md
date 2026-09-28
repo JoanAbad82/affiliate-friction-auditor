@@ -1,51 +1,100 @@
 # Affiliate Friction Auditor
 
-Early-stage audit toolkit for affiliate websites.
+Public audit toolkit for identifying affiliate CTA friction, monetization gaps, and commercial hub opportunities.
 
-Affiliate Friction Auditor helps identify commercial hub/listing pages where users must open a destination post before reaching a monetized offer.
+**Live project page:** https://openutilitylab.com/affiliate-friction-auditor/
+
+Affiliate Friction Auditor analyzes commercial hub/listing structures where users may need to open a destination post before reaching a monetized offer. The repository exposes the technical workflow, public-safe configuration, synthetic examples, and reproducible audit logic.
 
 ## Current status
 
-Prototype / public audit toolkit.
+The project is an **early public technical toolkit**, not a finished SaaS or polished CLI package.
 
-This repository contains the first validated workflow:
+The current workflow is script-based:
 
-1. Destination post validation.
-2. Hub opportunity matrix.
-3. Productized service proposal generation.
+1. validate destination posts;
+2. build a hub-to-destination opportunity matrix;
+3. generate a structured product/audit proposal from the findings.
+
+Manual review remains important. Automated findings can be wrong, and outputs must not be presented as guaranteed revenue, SEO, compliance, or conversion outcomes.
 
 ## Core idea
 
-Many affiliate websites already monetize destination posts, but their hub or listing pages add unnecessary friction:
+Many affiliate websites already monetize destination posts, but their hub or listing pages can add unnecessary friction:
 
-Hub/listing page -> destination post -> affiliate CTA
+```text
+hub/listing page -> destination post -> affiliate CTA
+```
 
-The toolkit identifies where a hub could expose a clearer commercial CTA earlier.
+The toolkit looks for cases where the commercial path can be made clearer or more direct.
 
 ## What it produces
 
-- Hub to destination opportunity matrix.
-- Detection of monetized destination posts.
-- Detection of probable affiliate gaps.
-- Prioritized implementation backlog.
-- ROI scenario template.
-- Sales/product proposal assets.
+- hub-to-destination opportunity matrix;
+- detection of monetized destination posts;
+- detection of probable affiliate gaps;
+- prioritized implementation backlog;
+- ROI scenario templates;
+- structured audit/proposal assets.
 
-## Important notes
+## Public-safe workflow
 
-- Do not commit full raw crawl outputs.
-- Do not commit screenshots, ZIPs, logs, or virtual environments.
-- Use examples only for reduced or sanitized samples.
-- Real client outputs should remain private unless explicitly approved.
+Real client or target-site material must remain outside the repository unless it is intentionally sanitized and approved for publication.
+
+Do not commit:
+
+- real client audit outputs;
+- raw crawl exports;
+- screenshots;
+- ZIP archives;
+- logs;
+- credentials or tokens;
+- private per-site configuration.
+
+The committed examples are reduced or synthetic and exist only to demonstrate output structure.
+
+## Setup
+
+Requires Python 3.11+.
+
+```bash
+python -m venv .venv
+# activate the environment for your platform
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m playwright install chromium
+```
+
+See [docs/usage.md](docs/usage.md) and [docs/configuration.md](docs/configuration.md) for the current script workflow.
+
+## Repository safety validation
+
+The cross-platform safety check validates tracked-file policy, public-safe examples, and Python syntax:
+
+```bash
+python scripts/verify_repo_safe.py
+```
+
+GitHub Actions runs this validation on pushes and pull requests.
 
 ## Product positioning
 
-This is not generic SEO. It is affiliate friction optimization for commercial hubs and listing pages.
+This is not generic SEO. It is a focused affiliate-friction audit workflow for commercial hubs and listing pages.
 
-## Commercial validation
+The repository is public software under the **Apache License 2.0**. Public source access does not imply access to private client data, private configurations, or unpublished commercial work.
 
-Phase 1.5 commercial validation materials live in `docs/commercial_validation.md` and `sales/`.
+## Roadmap
+
+The next engineering step is to move reusable classification/scoring logic from the phase scripts into `src/affiliate_friction_auditor/` and add focused unit tests.
+
+See [docs/roadmap.md](docs/roadmap.md).
+
+## Security and responsible use
+
+Only audit websites and data you are authorized to review. Keep crawl volume reasonable and manually review findings before acting on them.
+
+See [SECURITY.md](SECURITY.md).
 
 ## License
 
-See LICENSE.
+Licensed under the [Apache License 2.0](LICENSE).

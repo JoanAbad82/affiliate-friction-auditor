@@ -1,24 +1,23 @@
 # Roadmap
 
-## Phase 1.0 — Clean repository
-- Create clean repo.
-- Add .gitignore.
-- Add README.
-- Add docs.
-- Copy scripts 0.7, 0.8 and 0.9.
-- Create first local commit.
+## Completed foundation
 
-## Phase 1.1 — Configuration cleanup
-- Remove site-specific constants from scripts.
-- Introduce config file.
-- Support multiple websites.
-- Add CLI arguments.
+- Clean public repository structure.
+- Public-safe examples and configuration.
+- Site-specific settings extracted to configuration.
+- CLI arguments for the three current phase scripts.
+- Cross-platform repository-safety validation.
+- GitHub Actions safety/syntax CI.
+- Apache-2.0 public software license.
 
-## Phase 1.2 — Reusable package structure
-- Move logic from scripts to src/affiliate_friction_auditor/.
-- Add tests for classifiers and scoring.
+## Next — reusable package structure
 
-## Phase 1.4 — Open Utility Lab landing
-- Add project card.
-- Add product page.
-- Add contact/request audit CTA.
+- Move reusable URL/classification/scoring logic from scripts into `src/affiliate_friction_auditor/`.
+- Add focused unit tests before broader refactors.
+- Keep phase scripts as thin orchestration entry points where practical.
+
+## Later — product surface
+
+- Improve the Open Utility Lab project page.
+- Preserve the distinction between public tooling and private client/audit data.
+- Consider a more polished CLI only after the reusable library surface is stable.
