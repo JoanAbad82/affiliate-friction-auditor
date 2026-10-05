@@ -83,6 +83,11 @@ This is not generic SEO. It is a focused affiliate-friction audit workflow for c
 
 The repository is public software under the **Apache License 2.0**. Public source access does not imply access to private client data, private configurations, or unpublished commercial work.
 
+## Agent / machine-readable context
+
+- `AGENTS.md` — canonical repository guidance for coding/research agents.
+- `PROJECT_STATUS.json` — compact machine-readable status, validation and interaction metadata.
+
 ## Tests and roadmap
 
 The first reusable URL utilities now live in `src/affiliate_friction_auditor/url_utils.py` with focused unit tests. The next engineering slices will extract retailer/redirect classification, internal-cloak classification, destination-kind logic, and opportunity scoring.

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "repository": "JoanAbad82/affiliate-friction-auditor",
+  "status": "early-public-toolkit",
+  "canonical_branch": "main",
+  "license": "Apache-2.0",
+  "canonical_sources": [
+    "README.md",
+    "AGENTS.md",
+    "docs/usage.md",
+    "docs/configuration.md",
+    "src/affiliate_friction_auditor",
+    "tests"
+  ],
+  "validation": {
+    "repository_safety": "python scripts/verify_repo_safe.py",
+    "unit_tests": "python -m unittest discover -s tests -p \"test_*.py\" -v",
+    "ci": "GitHub Actions"
+  },
+  "interaction": {
+    "autonomous_agents": true,
+    "preferred_input": "minimal reproducible issue/fixture",
+    "external_input_trust": "UNTRUSTED_EXTERNAL_INPUT",
+    "production_write_access": false
+  },
+  "limitations": [
+    "Current reusable test coverage is partial and focused on extracted modules.",
+    "Browser/crawler behavior is not implied by pure unit-test success.",
+    "Public examples are synthetic or sanitized and are not client evidence."
+  ]
+}
