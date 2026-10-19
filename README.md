@@ -1,14 +1,16 @@
 # Affiliate Friction Auditor
 
-Public audit toolkit for identifying affiliate CTA friction, monetization gaps, and commercial hub opportunities.
+Public reference implementation for examining affiliate CTA friction, monetization signals, and commercial hub structures.
 
-**Live project page:** https://openutilitylab.com/affiliate-friction-auditor/
+**Free browser demonstration:** https://openutilitylab.com/affiliate-friction-auditor/
+
+**Project classification (October 2026):** Earlier AI-assisted engineering work, retained as a functional reference; **no longer a commercial priority**. See [Project Retrospective](docs/PROJECT_RETROSPECTIVE.md) for reasoning, limits, and reconsideration criteria. No paid audit service or new feature roadmap is being offered through this project.
 
 Affiliate Friction Auditor analyzes commercial hub/listing structures where users may need to open a destination post before reaching a monetized offer. The repository exposes the technical workflow, public-safe configuration, synthetic examples, and reproducible audit logic.
 
 ## Current status
 
-The project is an **early public technical toolkit**, not a finished SaaS or polished CLI package.
+The project remains a **public reference implementation**, not a finished SaaS, polished CLI package, or actively marketed commercial service.
 
 The current workflow is script-based:
 
@@ -77,9 +79,9 @@ python scripts/verify_repo_safe.py
 
 GitHub Actions runs this validation on pushes and pull requests.
 
-## Product positioning
+## Current positioning
 
-This is not generic SEO. It is a focused affiliate-friction audit workflow for commercial hubs and listing pages.
+This is a focused example of an affiliate-friction audit workflow for commercial hubs and listing pages. The free technical demonstration remains available, while commercialization is no longer prioritized. This does not prove that the tool is obsolete or that AI alternatives always outperform deterministic checks.
 
 The repository is public software under the **Apache License 2.0**. Public source access does not imply access to private client data, private configurations, or unpublished commercial work.
 
@@ -88,9 +90,9 @@ The repository is public software under the **Apache License 2.0**. Public sourc
 - `AGENTS.md` — canonical repository guidance for coding/research agents.
 - `PROJECT_STATUS.json` — compact machine-readable status, validation and interaction metadata.
 
-## Tests and roadmap
+## Tests and historical development roadmap
 
-The first reusable URL utilities now live in `src/affiliate_friction_auditor/url_utils.py` with focused unit tests. The next engineering slices will extract retailer/redirect classification, internal-cloak classification, destination-kind logic, and opportunity scoring.
+The first reusable URL utilities now live in `src/affiliate_friction_auditor/url_utils.py` with focused unit tests. An earlier roadmap proposed extracting retailer/redirect classification, internal-cloak classification, destination-kind logic, and opportunity scoring. This is historical planning, not a current commitment.
 
 Run the current tests with:
 
@@ -98,7 +100,7 @@ Run the current tests with:
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-See [docs/roadmap.md](docs/roadmap.md).
+See the [historical roadmap](docs/roadmap.md) and the [current retrospective](docs/PROJECT_RETROSPECTIVE.md).
 
 ## Security and responsible use
 

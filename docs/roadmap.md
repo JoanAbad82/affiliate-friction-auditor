@@ -1,4 +1,6 @@
-# Roadmap
+# Roadmap (historical)
+
+**Status (October 2026):** Historical planning record only; the project is now a functional reference implementation with no committed feature roadmap or commercial development priority. See [Project Retrospective](PROJECT_RETROSPECTIVE.md) for the current decision. The entries below describe earlier intentions, not pending obligations.
 
 ## Completed foundation
 
