@@ -1,7 +1,9 @@
 {
   "schema_version": "1.0",
   "repository": "JoanAbad82/affiliate-friction-auditor",
-  "status": "early-public-toolkit",
+  "status": "reference-implementation",
+  "commercial_priority": false,
+  "retrospective": "docs/PROJECT_RETROSPECTIVE.md",
   "canonical_branch": "main",
   "license": "Apache-2.0",
   "canonical_sources": [
